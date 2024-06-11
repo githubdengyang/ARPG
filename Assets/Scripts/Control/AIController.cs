@@ -14,7 +14,7 @@ namespace RPG.Control
 		[SerializeField] PatrolPath patrolPath;
 		[SerializeField] float waypointTolerance = 1f;
 		[SerializeField] float waypointDwellTime = 5;
-
+		[SerializeField] float patrolSpeedFraction = 0.3f;
 
 		private Fighter fighter;
 		private GameObject player;
@@ -34,6 +34,7 @@ namespace RPG.Control
 			player = GameObject.FindGameObjectWithTag("Player");
 			health = GetComponent<Health>();
 			mover = GetComponent<Mover>();
+			
 			actionScheduler = GetComponent<ActionScheduler>();
 			guardPosition = transform.position;
 		}
@@ -46,6 +47,7 @@ namespace RPG.Control
 			}
 			if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
 			{
+				
 				AttackBehaviour();
 			}
 			else if (timeSinceLastSawPlayer < suspicionTime)
@@ -81,7 +83,7 @@ namespace RPG.Control
 
 			if (timeSinceArrivedAtWaypoint > waypointDwellTime)
 			{
-				mover.StartMoveAction(nextPosition);
+				mover.StartMoveAction(nextPosition, patrolSpeedFraction);
 			}
 		}
 

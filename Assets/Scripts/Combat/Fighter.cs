@@ -42,13 +42,16 @@ namespace RPG.Combat
 			}
 			else
 			{
-				GetComponent<Mover>().MoveTo(_target.transform.position);
+				GetComponent<Mover>().MoveTo(_target.transform.position, 1f);
 			}
 		}
 
 		public bool CanAttack(GameObject target) 
 		{
-			if (target == null || target.transform.GetComponent<Health>() == null || target.transform.GetComponent<Health>().IsDead)
+			if (target == null
+				|| target == this.gameObject
+				|| target.transform.GetComponent<Health>() == null
+				|| target.transform.GetComponent<Health>().IsDead)
 				return false;
 			return true;
 		}
@@ -80,6 +83,7 @@ namespace RPG.Combat
 		{
 			SetStopAttack();
 			_target = null;
+			GetComponent<Mover>().Cancel();	
 		}
 
 		private void SetStopAttack()
