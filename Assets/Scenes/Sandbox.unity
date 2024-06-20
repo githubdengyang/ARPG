@@ -455,6 +455,10 @@ PrefabInstance:
       propertyPath: patrolSpeedFraction
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 587645908536105495, guid: d6e0c04f26346e24995c45d1528612df, type: 3}
+      propertyPath: uniqueIdentifier
+      value: e13a74d8-bf3a-48a2-8e9e-8847d833cd9d
+      objectReference: {fileID: 0}
     - target: {fileID: 2701407496545524452, guid: d6e0c04f26346e24995c45d1528612df, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
@@ -1102,11 +1106,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2413626744893629151, guid: 14999dcff7ea5c949a4798c59989c927, type: 3}
       propertyPath: m_Size.x
-      value: 2.86
+      value: 3.32
       objectReference: {fileID: 0}
     - target: {fileID: 2413626744893629151, guid: 14999dcff7ea5c949a4798c59989c927, type: 3}
       propertyPath: m_Size.y
-      value: 3.82
+      value: 4.09
       objectReference: {fileID: 0}
     - target: {fileID: 2413626744893629151, guid: 14999dcff7ea5c949a4798c59989c927, type: 3}
       propertyPath: m_Size.z
@@ -1118,7 +1122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2914368068252605648, guid: 14999dcff7ea5c949a4798c59989c927, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.56
+      value: 47.08
       objectReference: {fileID: 0}
     - target: {fileID: 2914368068252605648, guid: 14999dcff7ea5c949a4798c59989c927, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1447,6 +1451,10 @@ PrefabInstance:
     - target: {fileID: 53591521157416970, guid: d6e0c04f26346e24995c45d1528612df, type: 3}
       propertyPath: patrolSpeedFraction
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 587645908536105495, guid: d6e0c04f26346e24995c45d1528612df, type: 3}
+      propertyPath: uniqueIdentifier
+      value: 0dd72a32-2897-4aa8-b271-a94ae73adb7f
       objectReference: {fileID: 0}
     - target: {fileID: 2701407496545524452, guid: d6e0c04f26346e24995c45d1528612df, type: 3}
       propertyPath: m_Name
@@ -2326,6 +2334,10 @@ PrefabInstance:
       propertyPath: patrolSpeedFraction
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 587645908536105495, guid: d6e0c04f26346e24995c45d1528612df, type: 3}
+      propertyPath: uniqueIdentifier
+      value: 714782db-45fe-4f20-87e2-23e4fc739e43
+      objectReference: {fileID: 0}
     - target: {fileID: 2701407496545524452, guid: d6e0c04f26346e24995c45d1528612df, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -2623,15 +2635,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2413626744893629151, guid: 14999dcff7ea5c949a4798c59989c927, type: 3}
       propertyPath: m_Size.x
-      value: 5.65
+      value: 5.97
       objectReference: {fileID: 0}
     - target: {fileID: 2413626744893629151, guid: 14999dcff7ea5c949a4798c59989c927, type: 3}
       propertyPath: m_Size.y
-      value: 4.93
+      value: 4.9
       objectReference: {fileID: 0}
     - target: {fileID: 2413626744893629151, guid: 14999dcff7ea5c949a4798c59989c927, type: 3}
       propertyPath: m_Size.z
-      value: 5.54
+      value: 4.07
       objectReference: {fileID: 0}
     - target: {fileID: 2914368068252605648, guid: 14999dcff7ea5c949a4798c59989c927, type: 3}
       propertyPath: m_RootOrder
@@ -2813,6 +2825,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 917089806250472099, guid: d975a1283dcfe544f9c0cf5150215e99, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 917089806250472099, guid: d975a1283dcfe544f9c0cf5150215e99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.84582
+      objectReference: {fileID: 0}
+    - target: {fileID: 917089806250472099, guid: d975a1283dcfe544f9c0cf5150215e99, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.427786
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d975a1283dcfe544f9c0cf5150215e99, type: 3}
 --- !u!1001 &1757665668864167219
@@ -2833,6 +2857,10 @@ PrefabInstance:
     - target: {fileID: 53591521157416970, guid: d6e0c04f26346e24995c45d1528612df, type: 3}
       propertyPath: patrolSpeedFraction
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 587645908536105495, guid: d6e0c04f26346e24995c45d1528612df, type: 3}
+      propertyPath: uniqueIdentifier
+      value: 029f3ec7-a921-4bc6-9eff-47f83d402ed5
       objectReference: {fileID: 0}
     - target: {fileID: 2701407496545524452, guid: d6e0c04f26346e24995c45d1528612df, type: 3}
       propertyPath: m_Name

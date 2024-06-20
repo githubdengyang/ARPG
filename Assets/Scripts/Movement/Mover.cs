@@ -4,14 +4,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using RPG.Saving;
+
 namespace RPG.Movement
 {
-	public class Mover : MonoBehaviour,IAction
+	public class Mover : MonoBehaviour,IAction,ISaveable
 	{
 		private NavMeshAgent _nav;
 		private Health health;
 		[SerializeField] private float maxSpeed = 6.0f;
-		private void Start()
+		private void Awake()
 		{
 			_nav = GetComponent<NavMeshAgent>();
 			health = GetComponent<Health>();
@@ -47,6 +49,33 @@ namespace RPG.Movement
 		public void Cancel()
 		{
 			_nav.isStopped = true;
+		}
+
+		[System.Serializable]
+		struct MoverSaveData
+		{
+			public SerializableVector3 position;
+			public SerializableVector3 rotation;
+		}
+
+		public object CaptureState()
+		{
+			MoverSaveData data = new MoverSaveData();
+			data.position = new SerializableVector3(transform.position);
+			data.rotation = new SerializableVector3(transform.eulerAngles);
+
+			return data;
+		}
+
+		public void RestoreState(object state)
+		{
+			MoverSaveData data = (MoverSaveData)state;
+			_nav.enabled = false;
+			
+			transform.position = ((SerializableVector3)data.position).ToVector();
+			transform.eulerAngles = ((SerializableVector3)data.position).ToVector();
+
+			_nav.enabled = true;
 		}
 	}
 }
