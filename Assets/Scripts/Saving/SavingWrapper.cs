@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
+using RPG.SceneManagement;
 
-namespace RPG.SceneManagement
+namespace RPG.Saving
 {
 	public class SavingWrapper : MonoBehaviour
 	{

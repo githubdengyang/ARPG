@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\Cinematics\CinematicControlRemover.cs" />
     <Compile Include="Assets\Scripts\Control\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Combat\CombatTarget.cs" />
+    <Compile Include="Assets\Scripts\Saving\SavingWrapper.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\Portal.cs" />
     <Compile Include="Assets\Scripts\Movement\Mover.cs" />
     <Compile Include="Assets\Scripts\Saving\ISaveable.cs" />
@@ -77,7 +78,6 @@
     <Compile Include="Assets\Scripts\Control\PatrolPath.cs" />
     <Compile Include="Assets\Scripts\Saving\SerializableVector3.cs" />
     <Compile Include="Assets\Scripts\Saving\SavingSystem.cs" />
-    <Compile Include="Assets\Scripts\SceneManagement\SavingWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />

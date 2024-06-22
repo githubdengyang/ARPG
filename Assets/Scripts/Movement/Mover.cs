@@ -73,7 +73,7 @@ namespace RPG.Movement
 			_nav.enabled = false;
 			
 			transform.position = ((SerializableVector3)data.position).ToVector();
-			transform.eulerAngles = ((SerializableVector3)data.position).ToVector();
+			transform.eulerAngles = ((SerializableVector3)data.rotation).ToVector();
 
 			_nav.enabled = true;
 		}
