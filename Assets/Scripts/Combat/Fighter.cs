@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
+using RPG.Attribute;
 
 namespace RPG.Combat
 {
@@ -17,6 +18,11 @@ namespace RPG.Combat
 		float timeSinceLastAttack = Mathf.Infinity;
 		private Health target;
 		Weapon currentWeapon = null;
+
+		public Health GetTarget()
+		{
+			return target;
+		}
 
 		private void Start()
 		{
@@ -108,11 +114,11 @@ namespace RPG.Combat
 			if (target == null) return;
 			if (currentWeapon.HasProjectile())
 			{
-				currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target, currentWeapon.GetDamage());
+				currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target, gameObject, currentWeapon.GetDamage());
 			}
 			else
 			{
-				target.TakeDamage(currentWeapon.GetDamage());
+				target.TakeDamage(gameObject, currentWeapon.GetDamage());
 			}
 		}
 

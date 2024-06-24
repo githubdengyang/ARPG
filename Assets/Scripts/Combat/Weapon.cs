@@ -1,9 +1,6 @@
-﻿using RPG.Core;
-using RPG.Movement;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using RPG.Attribute;
 using UnityEngine;
+
 namespace RPG.Combat
 {
 	[CreateAssetMenu(fileName = "Weapon", menuName = "RPG Project/Make New Weapon", order  = 0)]
@@ -15,7 +12,7 @@ namespace RPG.Combat
 		[SerializeField] public float weaponDamage = 5f;
 		[SerializeField] public bool isRightHanded = false;
 		[SerializeField] Projectile projectile;
-
+		
 		const string weaponName = "Weapon";
 
 		public void Spawn(Transform rightHandTransform, Transform leftHandTransform, Animator animator)
@@ -70,10 +67,10 @@ namespace RPG.Combat
 			return projectile != null;
 		}
 
-		public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target, float calculatedDamage)
+		public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target,GameObject instigator, float calculatedDamage)
 		{
 			Projectile projectileInstance = Instantiate(projectile, GetTransform(rightHand, leftHand).position, Quaternion.identity);
-			projectileInstance.SetTarget(target, calculatedDamage);
+			projectileInstance.SetTarget(target, instigator, calculatedDamage);
 		}
 
 

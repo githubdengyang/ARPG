@@ -5,6 +5,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Attribute;
+
 namespace RPG.Control
 {
 	public class AIController : MonoBehaviour
