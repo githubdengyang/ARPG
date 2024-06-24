@@ -57,6 +57,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+--- !u!4 &6301320457047292526 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 423694, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+  m_PrefabInstance: {fileID: 6301320457047166304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6301320457047349868 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481036, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+  m_PrefabInstance: {fileID: 6301320457047166304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6991493264767052719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65,9 +75,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: a29ebc0c2cc58774a9cea6a3184676cc, type: 2}
+    - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
       propertyPath: weaponRange
       value: 1.91
       objectReference: {fileID: 0}
+    - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: a29ebc0c2cc58774a9cea6a3184676cc, type: 2}
+    - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 6301320457047292526}
+    - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 6301320457047349868}
+    - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: rightHandTransform
+      value: 
+      objectReference: {fileID: 6301320457047292526}
     - target: {fileID: 3442204081914100445, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -154,6 +184,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 5
+  suspicionTime: 2
+  patrolPath: {fileID: 0}
+  waypointTolerance: 1
+  waypointDwellTime: 5
+  patrolSpeedFraction: 0.3
 --- !u!114 &9128860043298349393
 MonoBehaviour:
   m_ObjectHideFlags: 0

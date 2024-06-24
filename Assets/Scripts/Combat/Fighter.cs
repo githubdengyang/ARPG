@@ -3,25 +3,35 @@ using RPG.Movement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Saving;
+
 namespace RPG.Combat
 {
-	public class Fighter : MonoBehaviour, IAction
+	public class Fighter : MonoBehaviour, IAction, ISaveable
 	{
-		[SerializeField]
-		public float weaponRange = 2f;
-
-		[SerializeField]
-		public float timeBetweenAttacks = 1f;
-
-		[SerializeField]
-		public float weaponDamage = 5f;
+		[SerializeField] public float timeBetweenAttacks = 1f;
+		[SerializeField] Transform rightHandTransform = null;
+		[SerializeField] Transform leftHandTransform = null;
+		[SerializeField] Weapon defaultWeapon;
 
 		float timeSinceLastAttack = Mathf.Infinity;
+		private Health target;
+		Weapon currentWeapon = null;
 
-		private Health _target;
-		
 		private void Start()
 		{
+			if (currentWeapon != null) 
+			{
+				return;
+			}
+			EquipWeapon(defaultWeapon);
+		}
+
+		public void EquipWeapon(Weapon weapon)
+		{
+			currentWeapon = weapon;
+			Animator animator = GetComponent<Animator>();
+			weapon.Spawn(rightHandTransform, leftHandTransform, animator);
 		}
 
 		private void Update()
@@ -29,11 +39,11 @@ namespace RPG.Combat
 			timeSinceLastAttack += Time.deltaTime;
 
 
-			if (_target == null)
+			if (target == null)
 				return;
-			if (_target.IsDead)
+			if (target.IsDead)
 				return;
-			bool isInRange = Vector3.Distance(this.transform.position, _target.transform.position) < weaponRange;
+			bool isInRange = Vector3.Distance(this.transform.position, target.transform.position) < currentWeapon.GetRange();
 			if (isInRange)
 			{
 				GetComponent<Mover>().Cancel();
@@ -42,7 +52,7 @@ namespace RPG.Combat
 			}
 			else
 			{
-				GetComponent<Mover>().MoveTo(_target.transform.position, 1f);
+				GetComponent<Mover>().MoveTo(target.transform.position, 1f);
 			}
 		}
 
@@ -58,7 +68,7 @@ namespace RPG.Combat
 
 		private void AttackBehaviour()
 		{
-			transform.LookAt(_target.transform.position);
+			transform.LookAt(target.transform.position);
 			if (timeSinceLastAttack >= timeBetweenAttacks)
 			{
 				SetAttack();
@@ -76,13 +86,13 @@ namespace RPG.Combat
 		public void Attack(GameObject target)
 		{
 			GetComponent<ActionScheduler>().StartAction(this);
-			_target = target.GetComponent<Health>();
+			this.target = target.GetComponent<Health>();
 		}
 
 		public void Cancel()
 		{
 			SetStopAttack();
-			_target = null;
+			target = null;
 			GetComponent<Mover>().Cancel();	
 		}
 
@@ -92,10 +102,36 @@ namespace RPG.Combat
 			GetComponent<Animator>().SetTrigger("stopAttack");
 		}
 
+		// Animation Event
 		private void Hit() 
 		{
-			if (_target == null) return;
-			_target.TakeDamage(weaponDamage);
+			if (target == null) return;
+			if (currentWeapon.HasProjectile())
+			{
+				currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target, currentWeapon.GetDamage());
+			}
+			else
+			{
+				target.TakeDamage(currentWeapon.GetDamage());
+			}
+		}
+
+		// Animation Event
+		private void Shoot()
+		{
+			Hit();
+		}
+
+		public object CaptureState()
+		{
+			return currentWeapon.name;
+		}
+
+		public void RestoreState(object state)
+		{
+			string weaponName = (string)state;
+			Weapon weapon = Resources.Load<Weapon>(weaponName);
+			EquipWeapon(weapon);
 		}
 	}
 }

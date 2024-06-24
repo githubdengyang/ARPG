@@ -41,6 +41,7 @@ namespace RPG.Saving
 			string path = GetPathFromSaveFile(loadFile);
 			Debug.Log("Loading from " + GetPathFromSaveFile(loadFile));
 			if (!File.Exists(path)) return new Dictionary<string, object>();
+
 			using (FileStream stream = File.Open(path, FileMode.Open))
 			{
 				BinaryFormatter formatter = new BinaryFormatter();

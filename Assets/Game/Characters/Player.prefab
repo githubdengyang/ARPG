@@ -61,6 +61,16 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3f6fc0cf5e5d31c458bc74ede87cb8ae, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
+--- !u!4 &5192787723281934830 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 461188, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
+  m_PrefabInstance: {fileID: 5192787723282129002}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5192787723281992070 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 403948, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
+  m_PrefabInstance: {fileID: 5192787723282129002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6170094575578376350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69,9 +79,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d349c47d7aafaf479f06df10ff162cb, type: 2}
+    - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
       propertyPath: weaponDamage
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 5277567586818118282, guid: 3887a5e344b354245bb2ce78db5c9fec, type: 3}
+    - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: b621dcd56c413894b96018c3085ad572, type: 2}
+    - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 5192787723281934830}
+    - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 5192787723281992070}
+    - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: rightHandTransform
+      value: 
+      objectReference: {fileID: 5192787723281934830}
+    - target: {fileID: 839640940305550510, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: controllerOverrideController
+      value: 
+      objectReference: {fileID: 22100000, guid: b8c92cc65aac87d4faa44bf1ae83f44f, type: 2}
     - target: {fileID: 3442204081914100445, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
       propertyPath: m_RootOrder
       value: 0
