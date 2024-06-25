@@ -42,8 +42,13 @@ namespace RPG.Stats
 				}
 				lookupTable[characterClass.characterClass] = statLookupTable;
 			}
+		}
 
-
+		public int GetLevels(Stat stat, CharacterClass characterClass)
+		{
+			BuildLookup();
+			float[] levels = lookupTable[characterClass][stat];
+			return levels.Length;
 		}
 	}
 
@@ -75,6 +80,7 @@ namespace RPG.Stats
 	{
 		Health,
 		ExperienceReward,
-
+		ExperienceToLevelUp,
+		Damage
 	}
 }

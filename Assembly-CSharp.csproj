@@ -86,8 +86,11 @@
     <Compile Include="Assets\Scripts\Stats\Progression.cs" />
     <Compile Include="Assets\Scripts\Attribute\HealthDisplay.cs" />
     <Compile Include="Assets\Scripts\Attribute\EnemyHealthDisplay.cs" />
-    <Compile Include="Assets\Scripts\Attribute\Experience.cs" />
-    <Compile Include="Assets\Scripts\Attribute\ExperienceDisplay.cs" />
+    <Compile Include="Assets\Scripts\Stats\ExperienceDisplay.cs" />
+    <Compile Include="Assets\Scripts\Stats\Experience.cs" />
+    <Compile Include="Assets\Scripts\Stats\LevelDisplay.cs" />
+    <Compile Include="Assets\Scripts\Stats\IModifierProvider.cs" />
+    <Compile Include="Assets\Asset Packs\GameDev.tv Assets\Scripts\Utils\LazyValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />

@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RPG.Attribute
+namespace RPG.Stats
 {
-	public class HealthDisplay : MonoBehaviour
+	public class ExperienceDisplay : MonoBehaviour
 	{
-		[SerializeField] Health health = null;
+		Experience experience = null;
 		Text text = null;
 
 		private void Awake()
 		{
-			health = GameObject.FindWithTag("Player").GetComponent<Health>();
+			experience = GameObject.FindWithTag("Player").GetComponent<Experience>();
 			text = GetComponent<Text>();
 		}
 
 		private void Update()
 		{
-			text.text = String.Format("{0:0.00}/{1:0.00}", health.GetHealthPoints(), health.GetMaxHealthPoints());
+			text.text = String.Format("{0:0}", experience.GetPoints());
 		}
 	}
 }

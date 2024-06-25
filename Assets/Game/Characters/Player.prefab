@@ -166,6 +166,14 @@ PrefabInstance:
       propertyPath: characterClass
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4966305806502083799, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: shouldUseModifiers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4966305806502083799, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: levelUpParticleEffect
+      value: 
+      objectReference: {fileID: 6764185846493816111, guid: 839704ab4bf4f004586dd23d8e1c755c, type: 3}
     - target: {fileID: 7575471029640262072, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
       propertyPath: uniqueIdentifier
       value: player
@@ -233,6 +241,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2816889043281450822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286623809440078293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8bd49bc168c594ca6b341ed499c3ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experiencePoints: 0
 --- !u!114 &3465769102549865545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,19 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e38f2ca5bbe0d541b0bd09414a03dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3114269843439640321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286623809440078293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87c36a0da4372a841b6c8ef73a1e2bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  experiencePoints: 0
 --- !u!4 &8819664406524351043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3442204081914100445, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}

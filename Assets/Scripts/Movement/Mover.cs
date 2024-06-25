@@ -71,12 +71,14 @@ namespace RPG.Movement
 		public void RestoreState(object state)
 		{
 			MoverSaveData data = (MoverSaveData)state;
-			_nav.enabled = false;
-			
+			if (_nav != null)
+				_nav.enabled = false;
+
 			transform.position = ((SerializableVector3)data.position).ToVector();
 			transform.eulerAngles = ((SerializableVector3)data.rotation).ToVector();
 
-			_nav.enabled = true;
+			if (_nav != null)
+				_nav.enabled = true;
 		}
 	}
 }
