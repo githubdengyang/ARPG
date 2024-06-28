@@ -1,94 +1,19 @@
-﻿using RPG.Attribute;
+﻿using RPG.Core;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using RPG.Attribute;
+using System;
+using UnityEngine.Events;
 
 namespace RPG.Combat
 {
-	[CreateAssetMenu(fileName = "Weapon", menuName = "RPG Project/Make New Weapon", order  = 0)]
-	public class Weapon : ScriptableObject
+	public class Weapon : MonoBehaviour
 	{
-		[SerializeField] GameObject weaponPrefab = null;
-		[SerializeField] AnimatorOverrideController animatorOverride = null;
-		[SerializeField] public float weaponRange = 2f;
-		[SerializeField] public float weaponDamage = 5f;
-		[SerializeField] public bool isRightHanded = false;
-		[SerializeField] Projectile projectile;
-		[SerializeField] float percentageBonus = 0;
-
-		const string weaponName = "Weapon";
-
-		public void Spawn(Transform rightHandTransform, Transform leftHandTransform, Animator animator)
+		[SerializeField] UnityEvent onHit;
+		public void OnHit()
 		{
-			DestroyOldWeapon(rightHandTransform, leftHandTransform);
-			if (weaponPrefab != null)
-			{
-				Transform transform = GetTransform(rightHandTransform, leftHandTransform);
-				GameObject weapon = Instantiate(weaponPrefab, transform);
-				weapon.name = weaponName;
-			}
-			var animatorOverrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
-
-			if (animatorOverride != null)
-			{
-
-				animator.runtimeAnimatorController = animatorOverride;
-			}
-			else if(animatorOverrideController != null)
-			{
-				animator.runtimeAnimatorController = animatorOverrideController.runtimeAnimatorController;
-			}
-		}
-
-		private void DestroyOldWeapon(Transform rightHandTransform, Transform leftHandTransform)
-		{
-			Transform oldWeapon = rightHandTransform.Find(weaponName);
-			if (oldWeapon == null)
-			{
-				oldWeapon = leftHandTransform.Find(weaponName);
-			}
-
-			if (oldWeapon == null) return;
-			oldWeapon.name = "DESTROYING";
-			Destroy(oldWeapon.gameObject);
-		}
-
-		private Transform GetTransform( Transform rightHandTransform, Transform leftHandTransform)
-		{
-			if (isRightHanded)
-			{
-				return rightHandTransform;
-			}
-			else
-			{
-				return leftHandTransform;
-			}
-		}
-
-		public bool HasProjectile()
-		{
-			return projectile != null;
-		}
-
-		public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target,GameObject instigator, float calculatedDamage)
-		{
-			Projectile projectileInstance = Instantiate(projectile, GetTransform(rightHand, leftHand).position, Quaternion.identity);
-			projectileInstance.SetTarget(target, instigator, calculatedDamage);
-		}
-
-
-
-		public float GetDamage()
-		{
-			return weaponDamage;
-		}
-
-		public float GetPercentageBonus() 
-		{
-			return percentageBonus;
-		}
-
-		public float GetRange()
-		{
-			return weaponRange;
+			onHit.Invoke();
 		}
 	}
 }

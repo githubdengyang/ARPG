@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Attribute;
+using System;
+using UnityEngine.Events;
 
 namespace RPG.Combat
 {
@@ -17,8 +19,13 @@ namespace RPG.Combat
 		[SerializeField] GameObject[] destroyOnHit = null;
 		[SerializeField] float lifeAfterImpact = 0f;
 		GameObject instigator = null;
+
+		[SerializeField] UnityEvent onHit;
+		[SerializeField] UnityEvent onLaunch;
+
 		private void Start()
 		{
+			onLaunch.Invoke();
 			transform.LookAt(GetAimLocation());
 		}
 
@@ -59,6 +66,9 @@ namespace RPG.Combat
 			{
 				Instantiate(hitEffect, GetAimLocation(), transform.rotation);
 			}
+
+			onHit.Invoke();
+
 			speed = 0;
 			target.TakeDamage(instigator, damage);
 			Destroy(gameObject, lifeAfterImpact);

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030c3a653767c834ebb72dbb205ff198, type: 3}
   m_Name: Bow Blue
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 8694866631608674552, guid: 9c236351935285c4ca4fa49d722552ea, type: 3}
+  weaponPrefab: {fileID: 7945429196723933266, guid: 9c236351935285c4ca4fa49d722552ea, type: 3}
   animatorOverride: {fileID: 22100000, guid: 2fb7667eae6aeb744a27c38e475644b9, type: 2}
   weaponRange: 20
   weaponDamage: 100

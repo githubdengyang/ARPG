@@ -11,7 +11,7 @@ namespace RPG.Saving
 		const string defaultSaveFile = "save";
 		[SerializeField] float fadeInTime = 0.2f;
 
-		private void Awake()
+		private void Start()
 		{
 			StartCoroutine(LoadLastScene());
 		}
@@ -22,7 +22,9 @@ namespace RPG.Saving
 
 			Fader fader = FindObjectOfType<Fader>();
 			fader.FadeOutImmediate();
-			yield return fader.FadeIn(fadeInTime);
+			fader.FadeIn(fadeInTime);
+
+			yield return null;
 		}	
 
 
