@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.AI;
+using RPG.Combat;
 
 namespace RPG.Control
 {
@@ -11,7 +12,6 @@ namespace RPG.Control
 	{
 		private Health health;
 		[SerializeField] float maxNavMeshProjectionDistance = 1f;
-		[SerializeField] float maxNavPathLength = 40f;
 		[System.Serializable]
 		struct CursorMapping
 		{
@@ -21,6 +21,11 @@ namespace RPG.Control
 		}
 
 		[SerializeField] CursorMapping[] cursorMappings = null;
+		public float rotationSpeed = 5.0f;
+		public float rotationAmount = 10.0f; // 每次按键旋转的角度
+		[SerializeField] Transform camare = null;
+		[SerializeField] float raycastRadius = 1f;
+
 
 		void Awake()
 		{
@@ -29,6 +34,15 @@ namespace RPG.Control
 
 		void Update()
 		{
+			if (Input.GetKey(KeyCode.Q))
+			{
+				RotateCamera(-rotationAmount); // 逆时针旋转
+			}
+			else if (Input.GetKey(KeyCode.E))
+			{
+				RotateCamera(rotationAmount); // 顺时针旋转
+			}
+
 			if (InteractWithUI()) 
 			{
 				SetCursor(CursorType.UI);
@@ -54,6 +68,12 @@ namespace RPG.Control
 			SetCursor(CursorType.None);
 		}
 
+		void RotateCamera(float angle)
+		{
+			if (camare == null) return;
+			camare.Rotate(Vector3.up, angle * rotationSpeed * Time.deltaTime, Space.World);
+			// 这里可以根据需要调整旋转的空间和速度
+		}
 
 		private bool InteractWithComponent()
 		{
@@ -75,7 +95,7 @@ namespace RPG.Control
 
 		private RaycastHit[] RaycastAllSorted()
 		{
-			RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+			RaycastHit[] hits = Physics.SphereCastAll(GetMouseRay(), raycastRadius);
 			Array.Sort(hits, (hit1, hit2) => hit1.distance.CompareTo(hit2.distance));
 			return hits;
 		}
@@ -112,6 +132,10 @@ namespace RPG.Control
 
 			if (hasHit)
 			{
+				if (!GetComponent<Mover>().CanMoveTo(target)) 
+				{
+					return false;
+				}
 				if (Input.GetMouseButton(0))
 				{
 					this.GetComponent<Mover>().StartMoveAction(target, 1f);
@@ -133,28 +157,10 @@ namespace RPG.Control
 
 			target = navMeshHit.position;
 
-			NavMeshPath path = new NavMeshPath();
-			bool hasPath = NavMesh.CalculatePath(transform.position, target, NavMesh.AllAreas, path);
-			if (!hasPath) return false;
-
-			if (path.status != NavMeshPathStatus.PathComplete) return false;
-
-			if (GetPathLength(path) > maxNavPathLength) return false;
-
 			return true;
 		}
 
-		private float GetPathLength(NavMeshPath path)
-		{
-			float total = 0;
-			if (path.corners.Length < 2) return total;
-
-			for (int i = 0; i < path.corners.Length - 1; i++)
-			{
-				total += Vector3.Distance(path.corners[i], path.corners[i + 1]);
-			}
-			return total;
-		}
+	
 
 		private static Ray GetMouseRay()
 		{

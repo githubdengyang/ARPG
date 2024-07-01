@@ -155,6 +155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3465769102549865545, guid: d1f1b5367610d6c4baf548cfa0828dc8, type: 3}
+      propertyPath: camare
+      value: 
+      objectReference: {fileID: 917089805384533115}
     - target: {fileID: 8819664406524351043, guid: d1f1b5367610d6c4baf548cfa0828dc8, type: 3}
       propertyPath: m_RootOrder
       value: 2
