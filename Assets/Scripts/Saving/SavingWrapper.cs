@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RPG.Saving;
+using GameDevTV.Saving;
 using RPG.SceneManagement;
 
-namespace RPG.Saving
+namespace GameDevTV.Saving
 {
 	public class SavingWrapper : MonoBehaviour
 	{

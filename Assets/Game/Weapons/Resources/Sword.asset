@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030c3a653767c834ebb72dbb205ff198, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
+  itemID: 826f3aa1-e66a-4b8f-9ad8-760ad284f3f7
+  displayName: Sword
+  description: 
+  icon: {fileID: 21300000, guid: d19901b0ee3c38743a7d383bd484b0b5, type: 3}
+  pickup: {fileID: 5716366742690825441, guid: ba97b8508efd36047ac8773e668c6bb0, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
   weaponPrefab: {fileID: 5753614581269825896, guid: 3887a5e344b354245bb2ce78db5c9fec, type: 3}
   animatorOverride: {fileID: 22100000, guid: b8c92cc65aac87d4faa44bf1ae83f44f, type: 2}
   weaponRange: 3

@@ -3,34 +3,54 @@ using RPG.Movement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RPG.Saving;
+using GameDevTV.Saving;
 using RPG.Attribute;
 using RPG.Stats;
 using GameDevTV.Utils;
+using GameDevTV.Inventories;
 
 namespace RPG.Combat
 {
-	public class Fighter : MonoBehaviour, IAction, ISaveable, IModifierProvider
+	public class Fighter : MonoBehaviour, IAction, ISaveable
 	{
 		[SerializeField] public float timeBetweenAttacks = 1f;
 		[SerializeField] Transform rightHandTransform = null;
 		[SerializeField] Transform leftHandTransform = null;
 		[SerializeField] WeaponConfig defaultWeapon;
-
+		
 		float timeSinceLastAttack = Mathf.Infinity;
 		private Health target;
 		WeaponConfig currentWeaponConfig ;
 		LazyValue<Weapon> currentWeapon;
+		Equipment equipment;
 
 		private void Awake()
 		{
 			currentWeaponConfig = defaultWeapon;
 			currentWeapon = new LazyValue<Weapon>(SetupDefaultWeapon);
+			equipment = GetComponent<Equipment>();
+			if (equipment != null) 
+			{
+				equipment.equipmentUpdated += UpdateWeapon;
+			}
 		}
 
 		private void Start()
 		{
 			currentWeapon.ForceInit();
+		}
+
+		private void UpdateWeapon() 
+		{
+			var weapon = equipment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
+			if (weapon != null)
+			{
+				EquipWeapon(weapon);
+			}
+			else
+			{
+				EquipWeapon(defaultWeapon);
+			}	
 		}
 
 		private Weapon SetupDefaultWeapon()
@@ -172,22 +192,6 @@ namespace RPG.Combat
 			string weaponName = (string)state;
 			WeaponConfig weapon = Resources.Load<WeaponConfig>(weaponName);
 			EquipWeapon(weapon);
-		}
-
-		public IEnumerable<float> GetAdditiveModifiers(Stat stat)
-		{
-			if (stat == Stat.Damage)
-			{
-				yield return currentWeaponConfig.GetDamage();
-			}
-		}
-
-		public IEnumerable<float> GetPercentageModifiers(Stat stat)
-		{
-			if (stat == Stat.Damage)
-			{
-				yield return currentWeaponConfig.GetPercentageBonus();
-			}
 		}
 	}
 }

@@ -1,4 +1,4 @@
-namespace RPG.Saving
+namespace GameDevTV.Saving
 {
     public interface ISaveable
     {

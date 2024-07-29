@@ -168,12 +168,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6301320457047292526}
     - target: {fileID: 2833123207085009814, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833123207085009814, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2833123207085009814, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833123207085009814, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2731589236471171280}
+    - target: {fileID: 2833123207085009814, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833123207085009814, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833123207085009814, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RandomDrop
       objectReference: {fileID: 0}
     - target: {fileID: 2833123207085009814, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -188,8 +208,16 @@ PrefabInstance:
       value: Aggrevate
       objectReference: {fileID: 0}
     - target: {fileID: 2833123207085009814, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: RPG.Inventories.RandomDropper, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833123207085009814, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: RPG.Control.AIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833123207085009814, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2833123207085009814, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
       propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -243,6 +271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4966305806502083799, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
+      propertyPath: startingLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9050494405784493667, guid: 7b50aef194198fa4c80d4999d0d99a93, type: 3}
       propertyPath: m_Speed
       value: 3
@@ -287,6 +319,22 @@ MonoBehaviour:
   waypointTolerance: 1
   waypointDwellTime: 5
   patrolSpeedFraction: 0.3
+  shoutDistance: 4
+--- !u!114 &2731589236471171280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2701407496545524452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b57f38c702a6d46b20f8ed9e173770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scatterDistance: 3
+  dropLibrary: {fileID: 11400000, guid: 3396ab7739e54fc43bc5420793183c33, type: 2}
+  numberOfDrops: 2
 --- !u!114 &9128860043298349393
 MonoBehaviour:
   m_ObjectHideFlags: 0

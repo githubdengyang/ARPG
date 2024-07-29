@@ -26,6 +26,7 @@ namespace RPG.Control
 		[SerializeField] Transform camare = null;
 		[SerializeField] float raycastRadius = 1f;
 
+		bool isDraggingUI = false;
 
 		void Awake()
 		{
@@ -45,7 +46,6 @@ namespace RPG.Control
 
 			if (InteractWithUI()) 
 			{
-				SetCursor(CursorType.UI);
 				return;
 			}
 			if (health.IsDead)
@@ -102,7 +102,27 @@ namespace RPG.Control
 
 		private bool InteractWithUI()
 		{
-			return EventSystem.current.IsPointerOverGameObject();
+			if (Input.GetMouseButtonUp(0))
+			{
+				isDraggingUI = false;
+			}
+
+			if (EventSystem.current.IsPointerOverGameObject())
+			{
+				if (Input.GetMouseButton(0))
+				{
+					isDraggingUI = true;
+				}
+				SetCursor(CursorType.UI);
+				return true;
+			}
+
+			if (isDraggingUI)
+			{ 
+				return true; 
+			}
+
+			return false;
 		}
 
 		private void SetCursor(CursorType cursorType)
