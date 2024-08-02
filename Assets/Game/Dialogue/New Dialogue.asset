@@ -1,5 +1,70 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7921301490483035734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 4a6148be-6f3a-4952-8c58-dc1c78756917
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: 
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 831
+    y: 150
+    width: 200
+    height: 100
+--- !u!114 &-5872493404973088505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 50b3daab-ff00-4f9c-84c5-caf60b3ba412
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: 
+  children:
+  - c4821573-6e74-4c4c-a158-6766dc9da1bb
+  rect:
+    serializedVersion: 2
+    x: 28
+    y: 219
+    width: 200
+    height: 100
+--- !u!114 &-2197368340422570297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: 1640c04f-484c-4cf2-a188-e8dd4bbfded4
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 0
+  text: 
+  children:
+  - 4a6148be-6f3a-4952-8c58-dc1c78756917
+  rect:
+    serializedVersion: 2
+    x: 581
+    y: 193
+    width: 200
+    height: 100
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,20 +78,30 @@ MonoBehaviour:
   m_Name: New Dialogue
   m_EditorClassIdentifier: 
   nodes:
-  - uniqueID: a
-    text: Hello
-    children:
-    - b
-    - c
-  - uniqueID: b
-    text: Hello, your self.
-    children: []
-  - uniqueID: c
-    text: Go away!
-    children: []
-  - uniqueID: 
-    text: 2231
-    children: []
-  - uniqueID: 
-    text: 31312
-    children: []
+  - {fileID: -5872493404973088505}
+  - {fileID: 2864572005553906804}
+  - {fileID: -2197368340422570297}
+  - {fileID: -7921301490483035734}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &2864572005553906804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d682c531190610744a9a5e8627450547, type: 3}
+  m_Name: c4821573-6e74-4c4c-a158-6766dc9da1bb
+  m_EditorClassIdentifier: 
+  isPlayerSpeaking: 1
+  text: 
+  children:
+  - 1640c04f-484c-4cf2-a188-e8dd4bbfded4
+  rect:
+    serializedVersion: 2
+    x: 295
+    y: 156
+    width: 200
+    height: 100
