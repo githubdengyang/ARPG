@@ -61,6 +61,7 @@
     <Compile Include="Assets\GameDev.tv Assets\Scripts\Inventories\Equipment.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\UI\Inventories\InventoryDragItem.cs" />
     <Compile Include="Assets\Scripts\Combat\Fighter.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\PlayerConversant.cs" />
     <Compile Include="Assets\Scripts\Stats\Experience.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\Inventories\PickupSpawner.cs" />
     <Compile Include="Assets\Scripts\Cinematics\CinematicControlRemover.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Scripts\Combat\WeaponConfig.cs" />
     <Compile Include="Assets\Asset Packs\PolygonFantasyHeroCharacters\Scripts\CharacterRandomizer.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\Inventories\EquipableItem.cs" />
+    <Compile Include="Assets\Scripts\UI\DialogueUI.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\Portal.cs" />
     <Compile Include="Assets\Scripts\Movement\Mover.cs" />
     <Compile Include="Assets\Scripts\Saving\ISaveable.cs" />
@@ -143,6 +145,9 @@
     <Compile Include="Assets\Scripts\Stats\Progression.cs" />
     <Compile Include="Assets\Asset Packs\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Scripts\Inventories\StatsEquipableItem.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\AIConversant.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\Combat\AggroGroup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
