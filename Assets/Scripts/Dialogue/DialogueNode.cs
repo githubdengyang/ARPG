@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using RPG.Core;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -20,6 +21,9 @@ namespace RPG.Dialogue
 		string onEnterAction;
 		[SerializeField]
 		string onExitAction;
+
+		[SerializeField]
+		Condition condition;
 
 		public bool IsPlayerSpeaking()
 		{
@@ -50,6 +54,10 @@ namespace RPG.Dialogue
 			return onExitAction;
 		}
 
+		public bool CheckCondition(IEnumerable<IPredicateEvaluator> evaluators)
+		{
+			return condition.Check(evaluators);
+		}
 
 #if UNITY_EDITOR
 		public void SetPlayerSpeaking(bool newIsPlayerSpeaking)

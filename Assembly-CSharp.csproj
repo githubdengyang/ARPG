@@ -69,11 +69,13 @@
     <Compile Include="Assets\Scripts\Control\PlayerController.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\UI\Inventories\ActionSlotUI.cs" />
     <Compile Include="Assets\Asset Packs\Water\Water\Scripts\Displace.cs" />
+    <Compile Include="Assets\Scripts\UI\Quests\QuestTooltipUI.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\Inventories\ActionStore.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\Inventories\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Attribute\HealthDisplay.cs" />
     <Compile Include="Assets\Scripts\Attribute\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Inventories\DropLibrary.cs" />
+    <Compile Include="Assets\Scripts\Core\Condition.cs" />
     <Compile Include="Assets\Scripts\UI\ShowHideUI.cs" />
     <Compile Include="Assets\Scripts\Combat\CombatTarget.cs" />
     <Compile Include="Assets\Scripts\Core\DestroyAfterEffect.cs" />
@@ -83,13 +85,16 @@
     <Compile Include="Assets\Scripts\Saving\SavingWrapper.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\UI\Inventories\IItemHolder.cs" />
     <Compile Include="Assets\Scripts\Combat\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestStatus.cs" />
     <Compile Include="Assets\Scripts\Combat\WeaponConfig.cs" />
     <Compile Include="Assets\Asset Packs\PolygonFantasyHeroCharacters\Scripts\CharacterRandomizer.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\Inventories\EquipableItem.cs" />
     <Compile Include="Assets\Scripts\UI\DialogueUI.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\Portal.cs" />
+    <Compile Include="Assets\Scripts\UI\Quests\QuestItemUI.cs" />
     <Compile Include="Assets\Scripts\Movement\Mover.cs" />
     <Compile Include="Assets\Scripts\Saving\ISaveable.cs" />
+    <Compile Include="Assets\Scripts\Combat\AggroGroup.cs" />
     <Compile Include="Assets\Asset Packs\GameDev.tv Assets\Scripts\Utils\LazyValue.cs" />
     <Compile Include="Assets\Scripts\Core\PeristentObjectSpawner.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\UI\Inventories\InventoryItemIcon.cs" />
@@ -103,6 +108,8 @@
     <Compile Include="Assets\GameDev.tv Assets\Scripts\UI\Inventories\InventorySlotUI.cs" />
     <Compile Include="Assets\Scripts\Inventories\RandomDropper.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\Utils\UI\Tooltips\TooltipSpawner.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\UI\Quests\QuestListUI.cs" />
     <Compile Include="Assets\Scripts\Core\CameraFacing.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\Fader.cs" />
     <Compile Include="Assets\Scripts\Combat\Projectile.cs" />
@@ -113,6 +120,8 @@
     <Compile Include="Assets\Scripts\Stats\ExperienceDisplay.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\Inventories\Inventory.cs" />
     <Compile Include="Assets\Scripts\Core\IAction.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestList.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestGiver.cs" />
     <Compile Include="Assets\Scripts\Saving\SaveableEntity.cs" />
     <Compile Include="Assets\Scripts\Core\ActionScheduler.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\Utils\PeristentObjectSpawner.cs" />
@@ -123,9 +132,11 @@
     <Compile Include="Assets\Asset Packs\Water\Water\Scripts\SpecularLighting.cs" />
     <Compile Include="Assets\Scripts\Cinematics\CinematicTrigger.cs" />
     <Compile Include="Assets\Scripts\Attribute\EnemyHealthDisplay.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\AIConversant.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\Inventories\EquipLocation.cs" />
     <Compile Include="Assets\Scripts\Stats\IModifierProvider.cs" />
     <Compile Include="Assets\Scripts\Core\Destroyer.cs" />
+    <Compile Include="Assets\Scripts\Quests\Quest.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\UI\Inventories\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\Control\CursorType.cs" />
     <Compile Include="Assets\Scripts\Control\PatrolPath.cs" />
@@ -141,18 +152,13 @@
     <Compile Include="Assets\GameDev.tv Assets\Scripts\Inventories\ActionItem.cs" />
     <Compile Include="Assets\Scripts\Saving\SavingSystem.cs" />
     <Compile Include="Assets\GameDev.tv Assets\Scripts\UI\Inventories\EquipmentSlotUI.cs" />
+    <Compile Include="Assets\Scripts\UI\Quests\QuestTooltipSpawner.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestCompletion.cs" />
     <Compile Include="Assets\Scripts\Inventories\StatsEquipment.cs" />
     <Compile Include="Assets\Scripts\Stats\Progression.cs" />
     <Compile Include="Assets\Asset Packs\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Scripts\Inventories\StatsEquipableItem.cs" />
-    <Compile Include="Assets\Scripts\Dialogue\AIConversant.cs" />
-    <Compile Include="Assets\Scripts\Dialogue\DialogueTrigger.cs" />
-    <Compile Include="Assets\Scripts\Combat\AggroGroup.cs" />
-    <Compile Include="Assets\Scripts\UI\Quests\QuestTooltipSpawner.cs" />
-    <Compile Include="Assets\Scripts\UI\Quests\QuestItemUI.cs" />
-    <Compile Include="Assets\Scripts\UI\Quests\QuestListUI.cs" />
-    <Compile Include="Assets\Scripts\Quests\Quest.cs" />
-    <Compile Include="Assets\Scripts\UI\Quests\QuestTooltipUI.cs" />
+    <Compile Include="Assets\Scripts\Core\IPredicateEvaluator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />

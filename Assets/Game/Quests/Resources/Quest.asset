@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Quest
   m_EditorClassIdentifier: 
   objectives:
-  - 1
-  - 2
-  - 3
+  - reference: 1
+    description: 111
+  rewards:
+  - number: 1
+    item: {fileID: 11400000, guid: b621dcd56c413894b96018c3085ad572, type: 2}
