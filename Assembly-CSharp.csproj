@@ -148,6 +148,11 @@
     <Compile Include="Assets\Scripts\Dialogue\AIConversant.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\Combat\AggroGroup.cs" />
+    <Compile Include="Assets\Scripts\UI\Quests\QuestTooltipSpawner.cs" />
+    <Compile Include="Assets\Scripts\UI\Quests\QuestItemUI.cs" />
+    <Compile Include="Assets\Scripts\UI\Quests\QuestListUI.cs" />
+    <Compile Include="Assets\Scripts\Quests\Quest.cs" />
+    <Compile Include="Assets\Scripts\UI\Quests\QuestTooltipUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
